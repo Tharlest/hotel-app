@@ -1,14 +1,24 @@
-// Código para guest.js
-function initGuest() {
-    createRooms(9);
+let selectedRoom = null;
+
+function createRooms(numRooms) {
+    const container = document.getElementById('roomContainer');
+    container.innerHTML = ''; // Limpa o container antes de adicionar os quartos
+    for (let i = 1; i <= numRooms; i++) {
+        const room = document.createElement('div');
+        room.className = 'room';
+        room.innerHTML = `
+            <div class="room-icon"><i class="fas fa-bed"></i></div>
+            <div class="room-number">${i}</div>
+        `;
+        room.addEventListener('click', () => selectRoom(i));
+        container.appendChild(room);
+    }
 }
 
-function openConcierge() {
-    window.open('concierge.html', '_blank');
-}
-
-function openChat() {
-    window.open('chat.html', '_blank');
+function selectRoom(roomNumber) {
+    selectedRoom = roomNumber;
+    document.getElementById('selectedRoom').textContent = roomNumber;
+    document.getElementById('servicePanel').style.display = 'block';
 }
 
 function requestService(service) {
@@ -27,23 +37,21 @@ function requestService(service) {
     };
 
     alert(`Serviço "${serviceNames[service]}" solicitado para o Quarto ${selectedRoom}.`);
-    // Aqui você adicionaria a lógica para enviar a solicitação ao servidor
 }
 
-// Chame initGuest() quando a página de hóspede for carregada
-if (document.querySelector('title').textContent === 'Área do Hóspede') {
-    initGuest();
+function openConcierge() {
+    window.open('concierge.html', '_blank');
 }
-// Código para admin.js
-function initAdmin() {
-    updateAdminPanel();
-    createRooms(9); // Para mostrar o status dos quartos
+
+function openChat() {
+    window.open('chat.html', '_blank');
 }
 
 function updateAdminPanel() {
     const requestsDiv = document.getElementById('pendingRequests');
-    requestsDiv.innerHTML = '<p>Nenhuma solicitação pendente no momento.</p>';
-    // Aqui você adicionaria a lógica para buscar e exibir solicitações pendentes
+    if (requestsDiv) {
+        requestsDiv.innerHTML = '<p>Nenhuma solicitação pendente no momento.</p>';
+    }
 }
 
 function generateReport() {
@@ -57,7 +65,12 @@ function generateReport() {
     alert(report);
 }
 
-// Chame initAdmin() quando a página de administrador for carregada
-if (document.querySelector('title').textContent === 'Painel do Administrador') {
-    initAdmin();
-}
+// Inicialização
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.querySelector('title').textContent === 'Área do Hóspede') {
+        createRooms(9);
+    } else if (document.querySelector('title').textContent === 'Painel do Administrador') {
+        updateAdminPanel();
+        createRooms(9);
+    }
+});
