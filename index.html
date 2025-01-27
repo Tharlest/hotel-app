@@ -6,11 +6,15 @@
     <title>App de Hospedagem</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <div id="app">
-        <h1>App de Hospedagem</h1>
+        <h1 data-translate="title">App de Hospedagem</h1>
+        <select id="languageSelect" onchange="changeLanguage()">
+            <option value="pt">Português</option>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+        </select>
         <div id="roomContainer"></div>
         <div id="servicePanel" style="display: none;">
             <h2>Serviços para Quarto <span id="selectedRoom"></span></h2>
@@ -20,18 +24,18 @@
             <button onclick="requestService('ar')"><i class="fas fa-snowflake"></i> Problemas com Ar-condicionado</button>
             <button onclick="requestService('camareira')"><i class="fas fa-broom"></i> Solicitar Camareira</button>
             <button onclick="requestService('checkout')"><i class="fas fa-sign-out-alt"></i> Fazer Checkout</button>
-            <button onclick="requestService('ventilador')"><i class="fas fa-fan"></i> Solicitar Ventilador</button>
-            <button onclick="requestService('lencois')"><i class="fas fa-bed"></i> Trocar Lençóis</button>
-            <button onclick="requestService('limpeza')"><i class="fas fa-soap"></i> Solicitar Limpeza</button>
         </div>
-        <div id="notificationPanel">
-            <h2>Notificações e Solicitações</h2>
-            <ul id="notificationList"></ul>
-        </div>
+        <button onclick="openConcierge()" data-translate="concierge">CONCIERGE</button>
+        <button onclick="openChat()" data-translate="chat">Chat com a Recepção</button>
         <div id="adminPanel" style="display: none;">
             <h2>Painel do Administrador</h2>
             <div id="adminList"></div>
             <div id="pendingRequests"></div>
+            <button onclick="generateReport()"><i class="fas fa-chart-bar"></i> Gerar Relatório</button>
+        </div>
+        <div id="notificationPanel">
+            <h2>Notificações e Solicitações</h2>
+            <ul id="notificationList"></ul>
         </div>
         <div id="log">
             <h2>Registro de Solicitações</h2>
@@ -39,6 +43,6 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <script src="translations.js"></script>
 </body>
 </html>
-
