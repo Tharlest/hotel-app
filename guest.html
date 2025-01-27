@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Hóspede</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Bem-vindo, Hóspede!</h1>
+        <div id="roomContainer"></div>
+        <div id="servicePanel" style="display: none;">
+            <h2>Serviços para Quarto <span id="selectedRoom"></span></h2>
+            <button onclick="requestService('toalha')"><i class="fas fa-towel"></i> Pedir Toalha</button>
+            <button onclick="requestService('quarto')"><i class="fas fa-concierge-bell"></i> Serviço de Quarto</button>
+            <button onclick="requestService('manutencao')"><i class="fas fa-tools"></i> Pedir Manutenção</button>
+            <button onclick="requestService('ar')"><i class="fas fa-snowflake"></i> Problemas com Ar-condicionado</button>
+            <button onclick="requestService('camareira')"><i class="fas fa-broom"></i> Solicitar Camareira</button>
+            <button onclick="requestService('checkout')"><i class="fas fa-sign-out-alt"></i> Fazer Checkout</button>
+        </div>
+        <button onclick="openConcierge()"><i class="fas fa-concierge-bell"></i> CONCIERGE</button>
+        <button onclick="openChat()"><i class="fas fa-comments"></i> Chat com a Recepção</button>
+    </div>
+    <script src="guest.js"></script>
+</body>
+</html>
