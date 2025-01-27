@@ -24,7 +24,6 @@ body {
 .room {
     width: 150px;
     height: 150px;
-    background-color: #fff;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -40,20 +39,24 @@ body {
     box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-.room.active {
-    animation: blink 1s infinite;
+.room.livre {
+    background-color: #4CAF50;
+    color: white;
 }
 
-@keyframes blink {
-    0% { box-shadow: 0 0 5px #ff6b6b; }
-    50% { box-shadow: 0 0 20px #ff6b6b; }
-    100% { box-shadow: 0 0 5px #ff6b6b; }
+.room.ocupado {
+    background-color: #f44336;
+    color: white;
+}
+
+.room.limpeza {
+    background-color: #ffeb3b;
+    color: black;
 }
 
 .room-number {
     font-size: 36px;
     font-weight: bold;
-    color: #333;
 }
 
 .room-icon {
@@ -61,89 +64,35 @@ body {
     margin-bottom: 10px;
 }
 
-#servicePanel, #adminPanel, #notificationPanel {
-    margin-top: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+.room-status {
+    font-size: 14px;
+    margin-top: 5px;
 }
 
 button {
     margin: 5px;
-    padding: 15px;
+    padding: 10px 15px;
     font-size: 16px;
     cursor: pointer;
     background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 50px;
-    transition: all 0.3s;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
 button:hover {
     background-color: #45a049;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-button i {
-    margin-right: 8px;
-}
-
-#log {
+#notificationPanel, #adminPanel, #log {
     margin-top: 20px;
-    text-align: left;
-    background-color: #fff;
     padding: 20px;
+    background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-#logList, #notificationList {
-    list-style-type: none;
-    padding: 0;
-}
-
-#logList li, #notificationList li {
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-}
-
-.timer {
-    font-weight: bold;
-    color: #ff6b6b;
-}
-
-#adminList {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+#languageSelect {
     margin-bottom: 20px;
 }
-
-.admin-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 10px;
-    padding: 10px;
-    background-color: #f0f0f0;
-    border-radius: 5px;
-}
-
-.admin-item i {
-    font-size: 24px;
-    margin-bottom: 5px;
-}
-
-#pendingRequests {
-    border-top: 1px solid #ccc;
-    padding-top: 20px;
-}
-
