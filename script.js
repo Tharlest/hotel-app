@@ -17,8 +17,11 @@ function createRooms(numRooms) {
 
 function selectRoom(roomNumber) {
     selectedRoom = roomNumber;
-    document.getElementById('selectedRoom').textContent = roomNumber;
-    document.getElementById('servicePanel').style.display = 'block';
+    const servicePanel = document.getElementById('servicePanel');
+    if (servicePanel) {
+        document.getElementById('selectedRoom').textContent = roomNumber;
+        servicePanel.style.display = 'block';
+    }
 }
 
 function requestService(service) {
@@ -40,11 +43,11 @@ function requestService(service) {
 }
 
 function openConcierge() {
-    window.open('concierge.html', '_blank');
+    alert('Funcionalidade do Concierge ainda não implementada.');
 }
 
 function openChat() {
-    window.open('chat.html', '_blank');
+    alert('Funcionalidade de Chat ainda não implementada.');
 }
 
 function updateAdminPanel() {
@@ -67,9 +70,9 @@ function generateReport() {
 
 // Inicialização
 document.addEventListener('DOMContentLoaded', function() {
-    if (document.querySelector('title').textContent === 'Área do Hóspede') {
+    if (document.title === 'Área do Hóspede') {
         createRooms(9);
-    } else if (document.querySelector('title').textContent === 'Painel do Administrador') {
+    } else if (document.title === 'Painel do Administrador') {
         updateAdminPanel();
         createRooms(9);
     }
