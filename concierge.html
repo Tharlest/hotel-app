@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concierge Virtual</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="conciergeApp">
+        <h1>Concierge Virtual</h1>
+        <div id="conciergeMenu">
+            <button onclick="showPartners('passeios')">1 - Passeios</button>
+            <button onclick="showPartners('restaurante')">2 - Restaurante</button>
+            <button onclick="showPartners('farmacia')">3 - Farmácia</button>
+            <button onclick="showPartners('guia')">4 - Guia Local</button>
+            <button onclick="showPartners('noite')">5 - Noite</button>
+            <button onclick="showPartners('lavanderia')">6 - Lavanderias</button>
+            <button onclick="showPartners('conveniencia')">7 - Conveniência</button>
+        </div>
+        <div id="partnerInfo"></div>
+    </div>
+    <script src="concierge.js"></script>
+</body>
+</html>
