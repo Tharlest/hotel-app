@@ -32,3 +32,10 @@ document.addEventListener('DOMContentLoaded', function() {
         createRooms(9);
     }
 });
+function openConcierge() {
+    window.location.href = 'concierge.html';
+}
+
+function openChat() {
+    window.location.href = 'chat.html';
+}
