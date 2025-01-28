@@ -1,28 +1,37 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --background-color: #ecf0f1;
+    --text-color: #34495e;
+    --header-color: #2c3e50;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 20px;
-    background-color: #f0f0f0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
 #app {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
-    background-color: white;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 h1, h2 {
-    color: #333;
+    color: var(--header-color);
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: var(--primary-color);
     border: none;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -30,43 +39,57 @@ button {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 4px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.3s;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #2980b9;
+    transform: translateY(-2px);
 }
 
 #roomContainer {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 10px;
-    margin-top: 20px;
+    gap: 20px;
+    margin-top: 30px;
 }
 
 .room {
+    background-color: white;
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
     cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.3s;
+    border-radius: 8px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .room:hover {
-    background-color: #f0f0f0;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.room-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--primary-color);
 }
 
 #servicePanel, #adminPanel {
-    margin-top: 20px;
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
+    background-color: white;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #notificationPanel {
-    margin-top: 20px;
-    border-top: 1px solid #ddd;
-    padding-top: 20px;
+    background-color: white;
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #notificationList {
@@ -75,44 +98,70 @@ button:hover {
 }
 
 #notificationList li {
-    background-color: #f9f9f9;
-    margin-bottom: 5px;
-    padding: 10px;
+    background-color: #f8f9fa;
+    margin-bottom: 10px;
+    padding: 15px;
     border-radius: 4px;
+    border-left: 4px solid var(--secondary-color);
 }
+
 #chatBox {
     height: 300px;
     border: 1px solid #ddd;
     overflow-y: auto;
-    margin-bottom: 10px;
-    padding: 10px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
 }
 
 .message {
-    margin-bottom: 10px;
-    padding: 5px 10px;
-    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 20px;
     max-width: 70%;
+    line-height: 1.4;
 }
 
 .guest {
-    background-color: #e6f3ff;
+    background-color: var(--primary-color);
+    color: white;
     margin-left: auto;
 }
 
 .reception {
     background-color: #f0f0f0;
+    color: var(--text-color);
 }
 
 #messageInput {
-    width: 70%;
-    padding: 5px;
+    width: calc(100% - 110px);
+    padding: 10px;
     margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
 .info-item {
+    background-color: white;
     border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    #app {
+        padding: 10px;
+    }
+
+    button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #roomContainer {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
 }
