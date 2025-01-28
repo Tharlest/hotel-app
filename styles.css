@@ -165,3 +165,14 @@ button:hover {
         grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     }
 }
+.room.available {
+    border-left: 4px solid var(--secondary-color);
+}
+
+.room.occupied {
+    border-left: 4px solid #e74c3c;
+}
+
+.room.cleaning {
+    border-left: 4px solid #f39c12;
+}
