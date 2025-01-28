@@ -8,18 +8,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="conciergeApp">
+    <div id="app">
         <h1>Concierge Virtual</h1>
         <div id="conciergeMenu">
-            <button onclick="showPartners('passeios')">1 - Passeios</button>
-            <button onclick="showPartners('restaurante')">2 - Restaurante</button>
-            <button onclick="showPartners('farmacia')">3 - Farmácia</button>
-            <button onclick="showPartners('guia')">4 - Guia Local</button>
-            <button onclick="showPartners('noite')">5 - Noite</button>
-            <button onclick="showPartners('lavanderia')">6 - Lavanderias</button>
-            <button onclick="showPartners('conveniencia')">7 - Conveniência</button>
+            <button onclick="showInfo('passeios')"><i class="fas fa-hiking"></i> Passeios</button>
+            <button onclick="showInfo('restaurantes')"><i class="fas fa-utensils"></i> Restaurantes</button>
+            <button onclick="showInfo('farmacias')"><i class="fas fa-prescription-bottle-alt"></i> Farmácias</button>
+            <button onclick="showInfo('taxis')"><i class="fas fa-taxi"></i> Táxis</button>
         </div>
-        <div id="partnerInfo"></div>
+        <div id="infoDisplay"></div>
+        <button onclick="window.location.href='guest.html'">Voltar para Área do Hóspede</button>
     </div>
     <script src="concierge.js"></script>
 </body>
