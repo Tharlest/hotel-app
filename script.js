@@ -43,11 +43,11 @@ function requestService(service) {
 }
 
 function openConcierge() {
-    alert('Funcionalidade do Concierge ainda não implementada.');
+    window.location.href = 'concierge.html';
 }
 
 function openChat() {
-    alert('Funcionalidade de Chat ainda não implementada.');
+    window.location.href = 'chat.html';
 }
 
 function updateAdminPanel() {
