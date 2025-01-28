@@ -80,3 +80,39 @@ button:hover {
     padding: 10px;
     border-radius: 4px;
 }
+#chatBox {
+    height: 300px;
+    border: 1px solid #ddd;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    max-width: 70%;
+}
+
+.guest {
+    background-color: #e6f3ff;
+    margin-left: auto;
+}
+
+.reception {
+    background-color: #f0f0f0;
+}
+
+#messageInput {
+    width: 70%;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.info-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
